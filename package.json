@@ -1,0 +1,20 @@
+{
+	"name": "nextjsgraphili",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "next -p 4400",
+		"dev": "next -p 8085",
+		"build": "next build"
+	},
+	"author": "Harley Santos Garzón",
+	"license": "UNLICENCED",
+	"dependencies": {
+		"@zeit/next-sass": "^1.0.1",
+		"next": "^9.3.5",
+		"node-sass": "^4.13.1",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	}
+}
