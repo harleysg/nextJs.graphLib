@@ -1,0 +1,38 @@
+.c-book {
+	position: relative;
+	min-height: 240px;
+	overflow: hidden;
+
+	&__thumbnail {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		background-color: #545b62;
+	}
+
+	&__title {
+		position: absolute;
+		top: 100%;
+		width: 100%;
+		font-size: 1rem;
+		background-color: rgba(255, 255, 255, 0.5);
+		margin: 0;
+	}
+
+	&__thumbnail--image {
+		height: 100%;
+		width: 100%;
+		display: block;
+		object-fit: contain;
+		color: white;
+	}
+	&:hover {
+		.c-book__title {
+			top: auto;
+			bottom: 0;
+		}
+	}
+}
