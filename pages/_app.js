@@ -1,13 +1,19 @@
-import App, { Container } from "next/app";
+import App from "next/app";
 import LayoutComponent from "../components/commons/layoutComponent";
 import "../styles/index.scss";
 
-export default function LibraryApp({ Component }) {
+import withApolloConfig from "../components/apollo/withApolloConfig";
+
+import { ApolloProvider } from "react-apollo";
+
+function LibraryApp({ Component, apollo, pageProps }) {
 	return (
-		<Container>
+		<ApolloProvider client={apollo}>
 			<LayoutComponent>
-				<Component />
+				<Component {...pageProps} />
 			</LayoutComponent>
-		</Container>
+		</ApolloProvider>
 	);
 }
+
+export default withApolloConfig(LibraryApp);
