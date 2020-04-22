@@ -1,9 +1,10 @@
 import React from "react";
+import Header from "./Header";
 
 export default function LayoutComponent({ children }) {
 	return (
 		<>
-			<header className={"o-header"}>GraphiLi</header>
+			<Header></Header>
 			<main className={"o-main"}>{children}</main>
 		</>
 	);
