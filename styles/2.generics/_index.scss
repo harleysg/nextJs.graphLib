@@ -7,4 +7,11 @@
 :root {
 	--fz: 16px;
 	--font-family: sans-serif;
+	--zIndex-level-1: 10;
+	--zIndex-level-2: 20;
+	--zIndex-level-3: 30;
+	--zIndex-level-4: 40;
+	--zIndex-level-5: 50;
+
+	--header-zIndex: var(--zIndex-level-3);
 }
