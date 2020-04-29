@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import { Query } from "react-apollo";
 import Router from "next/router";
@@ -24,8 +25,11 @@ export default function Books() {
 							</div>
 						);
 					} else {
-						{
-							return (
+						return (
+							<>
+								<Head>
+									<title>GraphiLi | Lista de libros</title>
+								</Head>
 								<div className={"c-grid-book"}>
 									{data.books.map(
 										({ title, id, thumbnail }) => (
@@ -46,8 +50,8 @@ export default function Books() {
 										)
 									)}
 								</div>
-							);
-						}
+							</>
+						);
 					}
 				}}
 			</Query>

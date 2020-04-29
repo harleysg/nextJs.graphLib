@@ -1,3 +1,4 @@
+import Head from "next/head";
 import React from "react";
 import { Query } from "react-apollo";
 import Router from "next/router";
@@ -55,48 +56,65 @@ function BookDetail({ id }) {
 							updatedAt,
 						} = data.book;
 						return (
-							<div className={"c-book-detail"}>
-								<div className="row">
-									<div className="col-4 col-sm-4 col-md-3">
-										<img
-											src={image || imgDefault}
-											alt={title}
-											className={
-												"img-fluid c-book-detail__image"
-											}
-										/>
-									</div>
-									<div className="col-8 col-sm-8 col-md-9">
-										<h4 className={"c-book-detail__title"}>
-											{title}
-										</h4>
-										<div>
-											<ul>
-												<li>
-													<strong>Created: </strong>{" "}
-													<span>
-														{dateFormate(createdAt)}
-													</span>
-												</li>
-												<li>
-													<strong>Updated: </strong>{" "}
-													<span>
-														{dateFormate(updatedAt)}
-													</span>
-												</li>
-											</ul>
+							<>
+								<Head>
+									<title>GraphiLi | {title}</title>
+								</Head>
+								<div className={"c-book-detail"}>
+									<div className="row">
+										<div className="col-4 col-sm-4 col-md-3">
+											<img
+												src={image || imgDefault}
+												alt={title}
+												className={
+													"img-fluid c-book-detail__image"
+												}
+											/>
 										</div>
-										<details open>
-											<summary>Description</summary>
-											<p>{description}</p>
-										</details>
-										<details>
-											<summary>Comentarios</summary>
-											<div className="c-book-detail__comments"></div>
-										</details>
+										<div className="col-8 col-sm-8 col-md-9">
+											<h4
+												className={
+													"c-book-detail__title"
+												}
+											>
+												{title}
+											</h4>
+											<div>
+												<ul>
+													<li>
+														<strong>
+															Created:{" "}
+														</strong>{" "}
+														<span>
+															{dateFormate(
+																createdAt
+															)}
+														</span>
+													</li>
+													<li>
+														<strong>
+															Updated:{" "}
+														</strong>{" "}
+														<span>
+															{dateFormate(
+																updatedAt
+															)}
+														</span>
+													</li>
+												</ul>
+											</div>
+											<details open>
+												<summary>Description</summary>
+												<p>{description}</p>
+											</details>
+											<details>
+												<summary>Comentarios</summary>
+												<div className="c-book-detail__comments"></div>
+											</details>
+										</div>
 									</div>
 								</div>
-							</div>
+							</>
 						);
 					}
 				}}
